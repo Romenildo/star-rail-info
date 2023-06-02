@@ -9,8 +9,12 @@ interface ContentProps{
 const Content = (props: ContentProps) =>{
 
 
-    const getData= () =>{
-        axios.get("https://rails-express.vercel.app/sr_info_parsed/801883292?lang=en")
+    const getData= (uid: number ) =>{
+
+        const baseUrl = "https://api.mihomo.me/sr_info_parsed";
+        const url = `${baseUrl}/${uid}`;
+
+        axios.get(url)
         .then((res:any)=>{
             console.log(res)
         })
@@ -22,7 +26,7 @@ const Content = (props: ContentProps) =>{
     return (
         <main className="bg-gray-600 h-screen">
             <div>Content</div>
-            <button onClick={getData}>Buscar dados</button>
+            <button onClick={()=>getData(801883292)}>Buscar dados</button>
         </main>
     )
 }
