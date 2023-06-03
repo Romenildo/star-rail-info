@@ -6,9 +6,10 @@ interface ProfileViewProps{
 
 const ProfileView = (props: ProfileViewProps) =>{
     return (
-        <div className="w-1/3 flex flex-col items-center mt-8 min-w-fit">
-
+        <div className="w-1/3 flex flex-col items-center mt-5 min-w-fit">
+            
             <div className="bg-gray-800 w-full flex flex-col items-center p-2 rounded-tl-2xl">
+                <p className="self-start ml-3 text-gray-400">Informações do usuário</p>
                 <div className="bg-cyan-500 rounded-full">
                     <img src={`https://raw.githubusercontent.com/Mar-7th/StarRailRes/master/${props.profile?.player?.icon}` }alt="img" crossOrigin="anonymous" />
                 </div>
