@@ -1,5 +1,8 @@
 'use client'
 
+import ProfileView from "../profileView"
+
+
 interface ContentProps{
     profile?: any
 }
@@ -9,11 +12,9 @@ interface ContentProps{
 const Content = (props: ContentProps) =>{
 
     return (
-        <main className="bg-gray-600 h-screen text-cyan-400 flex justify-center flex-col items-center">
-            <div>{props.profile?.player?.uid}</div>
-            <div>{props.profile?.player?.name}</div>
-            <div>{props.profile?.player?.level}</div>
-            <div>{props.profile?.player?.signature}</div>
+        <main className="bg-gray-600 h-screen w-ful flex flex-col items-center text-white">
+            <ProfileView profile={props.profile}/>
+           
         </main>
     )
 }
