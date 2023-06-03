@@ -8,8 +8,6 @@ export async function POST(request: Request) {
 
     const baseUrl = "https://api.mihomo.me/sr_info_parsed";
     const url = `${baseUrl}/${id}?lang=pt`;
-    console.log(id)
-    console.log(url)
 
     let data;
   await axios.get(url).then(res=>{
