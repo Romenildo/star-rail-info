@@ -13,19 +13,23 @@ import Header from "./components/template/header";
 export default function Home() {
 
   const [profile, setProfile] = useState<any>(null)
+  const [isLoading, setIsLoading] = useState<boolean>(false)
 
   const getProfile = (id: string) =>{
-    const data = {id: id}
+      const data = {id: id}
+      setIsLoading(true)
 
-        axios.post('/api/data', data)
-        .then((res:any)=>{
-            setProfile(res.data)
-            console.log(res.data)
-        })
-        .catch(err =>{
-          setProfile(null)
-          console.log(err)
-        })
+      axios.post('/api/data', data)
+      .then((res:any)=>{
+          setProfile(res.data)
+          console.log(res.data)
+          setIsLoading(false)
+      })
+      .catch(err =>{
+        setProfile(null)
+        console.log(err)
+        setIsLoading(false)
+      })
   }
 
   return (
@@ -33,7 +37,7 @@ export default function Home() {
       <Header onClick={getProfile}/>
       <main>
         {profile === null ?(
-          <EmptyContent/>
+          <EmptyContent isLoading={isLoading}/>
         ):(
           <Content profile={profile}/>
         )}
