@@ -5,7 +5,7 @@ interface CharacterProps{
 const Character = (props: CharacterProps) =>{
     return (
         <div className="w-full bg-gray-600">
-            Charactter
+            {props.character?.name}
         </div>
     )
 }
