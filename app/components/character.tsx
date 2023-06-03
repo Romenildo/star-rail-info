@@ -4,8 +4,8 @@ interface CharacterProps{
 
 const Character = (props: CharacterProps) =>{
     return (
-        <div>
-
+        <div className="w-full bg-gray-600">
+            Charactter
         </div>
     )
 }
