@@ -16,25 +16,25 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState<boolean>(false)
 
   const getProfile = (id: string) =>{
-      const data = {id: id}
+      setProfile(null)
       setIsLoading(true)
 
+      const data = {id: id}
       axios.post('/api/data', data)
-      .then((res:any)=>{
-          setProfile(res.data)
-          console.log(res.data)
+        .then((res:any)=>{
+            setProfile(res.data)
+            console.log(res.data)
+            setIsLoading(false)
+        })
+        .catch(err =>{
+          setProfile(null)
           setIsLoading(false)
-      })
-      .catch(err =>{
-        setProfile(null)
-        console.log(err)
-        setIsLoading(false)
-      })
+        })
   }
 
   return (
     <div>
-      <Header onClick={getProfile}/>
+      <Header onClick={getProfile} reset={()=>setProfile(null)}/>
       <main>
         {profile === null ?(
           <EmptyContent isLoading={isLoading}/>

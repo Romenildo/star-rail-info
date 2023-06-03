@@ -4,16 +4,22 @@ import { useState } from "react"
 
 interface HeaderProps{
     onClick: (id: string) => void
+    reset: () => void
 }
 
 const Header = (props: HeaderProps) =>{
 
     const [id, setId] = useState<any>('')
 
+    const reset = () =>{
+        props.reset()
+        setId('')
+    }
+
     return (
         <header className="flex bg-gray-800 h-20 border-b-1 border-cyan-400 shadow-cyan-300 shadow-sm">
             <div className="flex">
-                <img src="images/Honkai_Star_Rail_logo.png" alt="logo" width="180" className="mx-7 hover:cursor-pointer" />
+                <img  src="images/Honkai_Star_Rail_logo.png" alt="logo" width="180" onClick={reset} className="mx-7 hover:cursor-pointer" />
                 
                 <div className="flex items-center">
                     <input type="text"

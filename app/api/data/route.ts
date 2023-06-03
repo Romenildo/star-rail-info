@@ -10,9 +10,11 @@ export async function POST(request: Request) {
     const url = `${baseUrl}/${id}?lang=pt`;
 
     let data;
-  await axios.get(url).then(res=>{
-    data = res.data
-  })
+    await axios.get(url).then(res=>{
+      data = res.data
+    }).catch(err=>{
+      console.log(`Id: ${id} não encontrado`)
+    })
 
   return NextResponse.json(data);
 }
