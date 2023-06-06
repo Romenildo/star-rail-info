@@ -13,7 +13,7 @@ interface ContentProps{
 const Content = (props: ContentProps) =>{
 
     return (
-        <main className="bg-gray-600 h-fit w-full flex flex-col items-center text-white">
+        <main className="bg-gray-600 h-fit w-full flex flex-col items-center text-white bg-[url('/images/bg-start.png')]">
             <ProfileView profile={props.profile}/>
             <CharacterView characters={props.profile?.characters} profileName={props.profile?.player?.name}/>
            

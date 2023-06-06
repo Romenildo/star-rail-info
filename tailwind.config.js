@@ -14,7 +14,11 @@ module.exports = {
 
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'bg-texture': "url('/images/bg.png')"
+      }
+    },
   },
   plugins: [],
 }

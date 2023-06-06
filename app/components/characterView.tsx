@@ -27,7 +27,7 @@ const CharacterView = (props: CharacterViewProps) =>{
                 ))}
             </div>
             
-            <Character character={character}/>
+            <Character character={character} profileName={props.profileName}/>
         </div>
     )
 }
