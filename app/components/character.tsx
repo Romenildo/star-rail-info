@@ -1,3 +1,5 @@
+import Detail from "./charInfo/detail"
+
 interface CharacterProps{
     character?:any
     profileName?: string
@@ -9,16 +11,9 @@ const Character = (props: CharacterProps) =>{
             <div className=" bg-[url('/images/bg.png')] bg-cover w-11/12 h-[500px] flex p-4">
 
                 <div className="w-1/5 min-w-[300px]">
-                    <div className="flex gap-2">
+                    <div className="flex gap-2 items-center">
                         <img className="w-[50px] h-[50px] pl-2" src={`https://raw.githubusercontent.com/Mar-7th/StarRailRes/master/icon/sign/AvatarIcon.png` } alt="Personagem" />
-                        <div className="text-lg">
-                        
-                            <p className="text-yellow-300">Detalhe do personagem</p>
-                            <div className="flex pt-1">
-                                <img className="w-[35px] h-[25px] pl-2" src={`https://raw.githubusercontent.com/Mar-7th/StarRailRes/master/${props.character.element_icon}` } alt="Personagem" />
-                                <p className="pl-1">{props.character.element} / {props.character.name === "{NICKNAME}"?props.profileName:props.character.name}</p>
-                            </div>
-                        </div>
+                        <p className="text-yellow-300 text-lg">Detalhe do personagem</p>
                     </div>
                     
                     <ul className="w-full flex flex-col justify-center items-start py-10  gap-8 text-xl relative left-14">
@@ -37,8 +32,10 @@ const Character = (props: CharacterProps) =>{
                     </ul>
                 </div>
 
-                <div className="pl-10">Detalhes</div>
-a
+                <div className="pl-20">
+                    <Detail character={props.character} profileName={props.profileName}/>
+                </div>
+
             </div>
         </div>
     )
