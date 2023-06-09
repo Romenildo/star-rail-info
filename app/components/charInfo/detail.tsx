@@ -5,7 +5,6 @@ interface DetailProps{
 }
 
 const Detail = (props: DetailProps) =>{
-    console.log(props.character.property)
     return (
         <div className="w-[550px]">
              {/*Informacoes do personagem */}

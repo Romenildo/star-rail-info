@@ -1,4 +1,5 @@
 import Detail from "./charInfo/detail"
+import LightConeDetail from "./charInfo/lightConeDetail"
 
 interface CharacterProps{
     character?:any
@@ -8,7 +9,7 @@ interface CharacterProps{
 const Character = (props: CharacterProps) =>{
     return (
         <div className="w-full bg-gray-600 flex items-center justify-center pt-3">
-            <div className=" bg-[url('/images/bg.png')] bg-cover w-11/12 pb-5 flex p-4">
+            <div className=" bg-[url('/images/bg.png')] bg-cover w-11/12 pb-5 flex p-4 min-w-fit">
 
                 <div className="w-1/5 min-w-[300px]">
                     <div className="flex gap-2 items-center">
@@ -33,7 +34,8 @@ const Character = (props: CharacterProps) =>{
                 </div>
 
                 <div className="pl-20">
-                    <Detail character={props.character} profileName={props.profileName}/>
+                    {/** <Detail character={props.character} profileName={props.profileName}/>*/}
+                    <LightConeDetail lightCone={props.character?.light_cone}/>
                 </div>
 
             </div>
