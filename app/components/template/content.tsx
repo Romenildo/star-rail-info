@@ -9,13 +9,13 @@ interface ContentProps{
 }
 
 
-//para testes 801883292
+//para testes 801883292 | 601524235
 const Content = (props: ContentProps) =>{
 
     return (
         <main className="bg-gray-600 h-fit w-full flex flex-col items-center text-white bg-[url('/images/bg-start.png')]">
             <ProfileView profile={props.profile}/>
-            <CharacterView characters={props.profile?.characters} profileName={props.profile?.player?.name}/>
+            <CharacterView characters={props.profile?.characters} profileName={props.profile?.player?.nickname}/>
            
         </main>
     )

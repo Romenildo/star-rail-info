@@ -8,7 +8,7 @@ interface CharacterProps{
 const Character = (props: CharacterProps) =>{
     return (
         <div className="w-full bg-gray-600 flex items-center justify-center pt-3">
-            <div className=" bg-[url('/images/bg.png')] bg-cover w-11/12 h-[500px] flex p-4">
+            <div className=" bg-[url('/images/bg.png')] bg-cover w-11/12 pb-5 flex p-4">
 
                 <div className="w-1/5 min-w-[300px]">
                     <div className="flex gap-2 items-center">

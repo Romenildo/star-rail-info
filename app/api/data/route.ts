@@ -13,6 +13,7 @@ export async function POST(request: Request) {
     await axios.get(url).then(res=>{
       data = res.data
     }).catch(err=>{
+      console.log(err)
       console.log(`Id: ${id} não encontrado`)
     })
 
