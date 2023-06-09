@@ -4,6 +4,7 @@ interface LightConeDetailProps{
 }
 
 const LightConeDetail = (props: LightConeDetailProps) =>{
+    console.log(props.lightCone)
     return (
         
         <div className="flex gap-12"> 
@@ -15,7 +16,7 @@ const LightConeDetail = (props: LightConeDetailProps) =>{
                 </div>
             </div>
 
-            <div className="min-w-[220px] pt-10">
+            <div className="min-w-[220px] pt-10 w-[300px]">
 
                 <div>
                     <p className="text-[1.2rem] font-semibold whitespace-nowrap">{props.lightCone.name}</p>

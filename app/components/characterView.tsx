@@ -18,7 +18,7 @@ const CharacterView = (props: CharacterViewProps) =>{
                 {props.characters?.map((char)=>(
                     <div key={char.id}>
                         <div 
-                            className={`bg-[${char?.element?.color}] rounded-full border-[3px] border-gray-900 w-[95px] h-[95px] hover:opacity-70 hover:cursor-pointer hover:scale-110 overflow-hidden`} 
+                            className={`bg-[${char?.element?.color}] rounded-full border-[3px] border-gray-600 w-[95px] h-[95px] hover:opacity-70 hover:cursor-pointer hover:scale-110 overflow-hidden`} 
                             onClick={()=>setCharacter(char)}>
                             <img className="w-15 h-15" src={`https://raw.githubusercontent.com/Mar-7th/StarRailRes/master/image/character_preview/${char.id}.png` } alt="Personagem" />  
                         </div>

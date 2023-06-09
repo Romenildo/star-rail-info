@@ -14,6 +14,9 @@ module.exports = {
     'bg-[#F4D258]',
     'bg-[#8872F1]',
     'bg-[#47C7FD]',
+    'bg-gradient-to-br from-amber-800 to-yellow-300',
+    'bg-gradient-to-br from-purple-900 to-purple-300',
+    'bg-gradient-to-br from-blue-900 to-blue-300 '
 
   ],
   theme: {

@@ -2,6 +2,7 @@
 import { useState } from "react"
 import Detail from "./charInfo/detail"
 import LightConeDetail from "./charInfo/lightConeDetail"
+import RelicDetail from "./charInfo/relicDetail"
 
 interface CharacterProps{
     character?:any
@@ -22,7 +23,7 @@ const Character = (props: CharacterProps) =>{
             return <LightConeDetail lightCone={props.character?.light_cone}/>
         }
         if(detailSelected ==="relic"){
-            //return 
+            return <RelicDetail relics={props.character.relics}/>
         }
     }
 
