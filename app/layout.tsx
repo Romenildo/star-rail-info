@@ -2,7 +2,7 @@ import './globals.css'
 
 export const metadata = {
   title: 'StarRail info',
-  description: 'honkai star rail informações',
+  description: 'Visualizar as informações do perfil do usuario e seus principais personagens a partir do seu ID de jogador.',
 }
 
 export default function RootLayout({

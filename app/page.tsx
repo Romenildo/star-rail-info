@@ -8,8 +8,6 @@ import Content from "./components/template/content";
 import Footer from "./components/template/footer";
 import Header from "./components/template/header";
 
-
-
 export default function Home() {
 
   const [profile, setProfile] = useState<any>(null)
@@ -23,8 +21,8 @@ export default function Home() {
       axios.post('/api/data', data)
         .then((res:any)=>{
             setProfile(res.data)
-            console.log(res.data)
             setIsLoading(false)
+            console.log(res.data)
         })
         .catch(err =>{
           setProfile(null)
@@ -33,15 +31,14 @@ export default function Home() {
   }
 
   return (
-    <div>
-      <Header onClick={getProfile} reset={()=>setProfile(null)}/>
+    <div className="min-w-[600px]">
+      <Header onClick={getProfile} resetCurrentProfile={()=>setProfile(null)}/>
       <main>
         {profile === null ?(
           <EmptyContent isLoading={isLoading}/>
         ):(
           <Content profile={profile}/>
         )}
-        
       </main>
       <Footer/>
     </div>
